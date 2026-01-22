@@ -2,10 +2,12 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { BrowserApp } from "../types";
 
+// Updated suggestBrowser to accept userPreferences parameter
 export const suggestBrowser = async (
   url: string,
   sourceApp: string,
-  browsers: BrowserApp[]
+  browsers: BrowserApp[],
+  userPreferences?: string
 ): Promise<{ browserId: string; reasoning: string }> => {
   try {
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
@@ -19,6 +21,8 @@ export const suggestBrowser = async (
         来源应用: "${sourceApp}"
         可选浏览器：
         ${browserList}
+
+        ${userPreferences ? `用户定义的偏好 (最高优先级):\n${userPreferences}\n` : ''}
 
         任务：推荐最适合打开此链接的浏览器。
         推荐逻辑参考：

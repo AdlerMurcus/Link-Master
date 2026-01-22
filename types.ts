@@ -1,11 +1,13 @@
 
+export type Language = 'zh' | 'en';
+
 export interface BrowserApp {
   id: string;
   name: string;
   icon: string;
   path: string;
   isDefault?: boolean;
-  type: 'chrome' | 'safari' | 'firefox' | 'arc' | 'edge' | 'other';
+  type: 'chrome' | 'safari' | 'firefox' | 'arc' | 'edge' | 'brave' | 'vivaldi' | 'other';
 }
 
 export enum RuleType {

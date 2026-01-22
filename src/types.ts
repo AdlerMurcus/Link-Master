@@ -1,4 +1,6 @@
 
+export type Language = 'zh' | 'en';
+
 export interface BrowserApp {
   id: string;
   name: string;
