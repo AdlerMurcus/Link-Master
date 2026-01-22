@@ -1,0 +1,40 @@
+
+export interface BrowserApp {
+  id: string;
+  name: string;
+  icon: string;
+  path: string;
+  isDefault?: boolean;
+  type: 'chrome' | 'safari' | 'firefox' | 'arc' | 'edge' | 'brave' | 'vivaldi' | 'other';
+}
+
+export enum RuleType {
+  SOURCE_APP = 'SOURCE_APP',
+  URL_PATTERN = 'URL_PATTERN',
+  AI_SMART = 'AI_SMART',
+}
+
+export interface RoutingRule {
+  id: string;
+  type: RuleType;
+  value: string;
+  targetBrowserId: string;
+  description?: string;
+  active: boolean;
+}
+
+export interface HistoryLog {
+  id: string;
+  timestamp: Date;
+  url: string;
+  sourceApp?: string;
+  routedToBrowserId: string;
+  method: 'Manual' | 'Rule' | 'AI' | 'Default';
+}
+
+export enum AppView {
+  DASHBOARD = 'DASHBOARD',
+  RULES = 'RULES',
+  SETTINGS = 'SETTINGS',
+  SIMULATION = 'SIMULATION'
+}

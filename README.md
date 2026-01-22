@@ -1,11 +1,25 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# LinkMaster Pro - macOS Browser Router
 
-  <h1>Built with AI Studio</h2>
+A native macOS utility to intercept links and route them to specific browsers based on source applications or URL patterns.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## ⚡️ One-Click Installation
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+To set up the development environment and launch the app immediately, run:
 
-</div>
+```bash
+git clone <this-repo> && cd linkmaster && npm install && npm start
+```
+
+## 🛠 Features
+- **Smart Popups**: Instant browser selector with keyboard shortcut support.
+- **App Detection**: Automatically identifies if the link came from Slack, Discord, WeChat, etc.
+- **Rule Engine**: Create permanent routing rules for repetitive tasks.
+- **Performance**: Zero-latency native Electron implementation (AI removed for speed).
+
+## 📦 Distribute
+To build a production-ready `.dmg` installer:
+```bash
+npm run dist
+```
+The installer will be available in the `/release` directory.
